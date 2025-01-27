@@ -8,10 +8,11 @@ class ApplicationController < ActionController::Base
 
   private
     def require_upgrade?
-      return false if self_hosted?
-      return false unless Current.session
-      return false if Current.family.subscribed?
-      return false if subscription_pending? || request.path == settings_billing_path
+      return false
+      # return false if self_hosted?
+      # return false unless Current.session
+      # return false if Current.family.subscribed?
+      # return false if subscription_pending? || request.path == settings_billing_path
 
       true
     end
